@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Toolbox Logo - Assembly Animation</title>
+  <style>
+    .dot {
+      animation: fly-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    .dot1 { transform: translate(-100px, -100px); animation-delay: 0s; }
+    .dot2 { transform: translate(100px, -100px); animation-delay: 0.1s; }
+    .dot3 { transform: translate(-100px, 100px); animation-delay: 0.2s; }
+    .dot4 { transform: translate(100px, 100px); animation-delay: 0.3s; }
+    
+    .line {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: connect 0.4s ease-out forwards;
+    }
+    .line-top { animation-delay: 0.5s; }
+    .line-right { animation-delay: 0.6s; }
+    .line-bottom { animation-delay: 0.7s; }
+    .line-left { animation-delay: 0.8s; }
+    
+    @keyframes fly-in {
+      to { transform: translate(0, 0); }
+    }
+    @keyframes connect {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+  
+  <!-- Background -->
+  <rect width="200" height="200" rx="24" fill="#7C3AED"/>
+  
+  <!-- Connecting lines -->
+  <line class="line line-top" x1="50" y1="50" x2="150" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <line class="line line-right" x1="150" y1="50" x2="150" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <line class="line line-bottom" x1="150" y1="150" x2="50" y2="150" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <line class="line line-left" x1="50" y1="150" x2="50" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Corner dots -->
+  <circle class="dot dot1" cx="50" cy="50" r="16" fill="white"/>
+  <circle class="dot dot2" cx="150" cy="50" r="16" fill="white"/>
+  <circle class="dot dot3" cx="50" cy="150" r="16" fill="white"/>
+  <circle class="dot dot4" cx="150" cy="150" r="16" fill="white"/>
+</svg>
