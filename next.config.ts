@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  basePath: isProd ? '/toolbox-website' : '',
+  assetPrefix: isProd ? '/toolbox-website/' : '',
 };
 
 export default nextConfig;
